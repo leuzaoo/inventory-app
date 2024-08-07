@@ -9,6 +9,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const isSidebarCollapsed = useAppSelector(
     (state) => state.global.isSidebarCollapsed
   );
+  
   const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
 
   useEffect(() => {
@@ -28,7 +29,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
       <Sidebar />
       <main
         className={`flex flex-col w-full h-full py-7 px-9 bg-gray-50 ${
-          isSidebarCollapsed ? "md:pl-24" : "md:pl-72"
+          isSidebarCollapsed ? "md:pl-24" : "md:pl-80"
         }`}
       >
         <Navbar />
