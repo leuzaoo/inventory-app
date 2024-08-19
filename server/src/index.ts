@@ -1,9 +1,10 @@
+import dashboardRoutes from "./routes/dashboardRoutes";
+import bodyParser from "body-parser";
 import express from "express";
 import dotenv from "dotenv";
-import bodyParser from "body-parser";
-import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
+import cors from "cors";
 // ROUTE IMPORTS
 
 // CONFIG
@@ -19,9 +20,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 // ROUTES
-app.get("/hello", (req, res) => {
-  res.send("hello wordldlddlldld")
-})
+app.use("/dashboard", dashboardRoutes);
 // SERVER
 
 const port = process.env.PORT || 3001;
