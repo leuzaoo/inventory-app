@@ -23,7 +23,7 @@ export interface PurchaseSummary {
 }
 
 export interface ExpenseSummary {
-  expenseSummarId: string;
+  expenseSummaryId: string;
   totalExpenses: number;
   date: string;
 }
