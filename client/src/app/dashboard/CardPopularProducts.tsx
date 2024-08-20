@@ -1,21 +1,32 @@
+import React from "react"
 import { useGetDashboardMetricsQuery } from "@/state/api";
 
 const CardPopularProducts = () => {
-  const { data: dashboardMetrics, isLoading } = useGetDashboardMetricsQuery();
-  console.log(dashboardMetrics);
+  const {
+    data: dashboardMetrics,
+    isLoading,
+    isError,
+  } = useGetDashboardMetricsQuery();
+
+  console.log("dashboardMetrics:", dashboardMetrics);
+  if (isError) {
+    console.error("Failed to fetch dashboard metrics");
+  }
 
   return (
     <div className="row-span-3 xl:row-span-6 bg-white shadow-md rounded-2xl pb-16">
       {isLoading ? (
         <div className="m-5">Loading...</div>
+      ) : isError ? (
+        <div className="m-5">Failed to load data</div>
       ) : (
         <>
           <h3 className="text-lg font-semibold px-7 pt-5 pb-2">
-            Popularr Products
+            Popular Products
           </h3>
           <hr />
           <div className="overflow-auto h-full">
-            {dashboardMetrics?.popularProducts.map((product) => (
+            {dashboardMetrics?.popularProducts?.map((product) => (
               <div
                 key={product.productId}
                 className="flex items-center justify-between gap-3 px-5 py-7 border-b"
@@ -27,6 +38,7 @@ const CardPopularProducts = () => {
                     <span className="font-bold text-blue-500 text-xs">
                       ${product.price}
                     </span>
+                    <span className="mx-2">|</span>
                   </div>
                 </div>
               </div>
