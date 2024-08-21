@@ -6,7 +6,7 @@ import Rating from "../(components)/Rating";
 const CardPopularProducts = () => {
   const {
     data: dashboardMetrics,
-    isLoading,
+      isLoading,
     isError,
   } = useGetDashboardMetricsQuery();
 

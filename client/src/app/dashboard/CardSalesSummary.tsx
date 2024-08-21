@@ -30,9 +30,9 @@ const CardSalesSummary = () => {
   }, salesData[0] || {});
 
   const highestValueDate = highestValueData.date
-    ? new Date(highestValueData.date).toLocaleDateString("en-US", {
-        month: "numeric",
+    ? new Date(highestValueData.date).toLocaleDateString("pt-BR", {
         day: "numeric",
+        month: "numeric",
         year: "2-digit",
       })
     : "N/A";
@@ -62,11 +62,11 @@ const CardSalesSummary = () => {
               <div className="text-lg font-medium">
                 <p className="text-xs text-gray-400">Value</p>
                 <span className="text-2xl font-extrabold">
-                  $
-                  {(totalValueSum / 1000000).toLocaleString("en", {
+                  R$
+                  {(totalValueSum / 1000000).toLocaleString("pt", {
                     maximumFractionDigits: 2,
                   })}
-                  m
+                  M
                 </span>
                 <span className="text-green-500 text-sm ml-2">
                   <TrendingUp className="inline w-4 h-4 mr-1" />
@@ -80,9 +80,9 @@ const CardSalesSummary = () => {
                   setTimeframe(e.target.value);
                 }}
               >
-                <option value="daily">Daily</option>
-                <option value="weekly">Weekly</option>
-                <option value="monthly">Monthly</option>
+                <option value="daily">Diário</option>
+                <option value="weekly">Semanal</option>
+                <option value="monthly">Mensal</option>
               </select>
             </div>
             {/* CHART */}
@@ -96,7 +96,10 @@ const CardSalesSummary = () => {
                   dataKey="date"
                   tickFormatter={(value) => {
                     const date = new Date(value);
-                    return `${date.getMonth() + 1}/${date.getDate()}`;
+                    return date.toLocaleDateString("pt-BR", {
+                      day: "2-digit",
+                      month: "2-digit",
+                    });
                   }}
                 />
                 <YAxis
@@ -109,14 +112,14 @@ const CardSalesSummary = () => {
                 />
                 <Tooltip
                   formatter={(value: number) => [
-                    `$${value.toLocaleString("en")}`,
+                    `$${value.toLocaleString("pt")}`,
                   ]}
                   labelFormatter={(label) => {
                     const date = new Date(label);
-                    return date.toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
+                    return date.toLocaleDateString("pt-BR", {
                       day: "numeric",
+                      month: "long",
+                      year: "numeric",
                     });
                   }}
                 />
@@ -136,7 +139,7 @@ const CardSalesSummary = () => {
             <div className="flex justify-between items-center mt-6 text-sm px-7 mb-4">
               <p>{salesData.length || 0} days</p>
               <p className="text-sm">
-                Highest Sales Date:{" "}
+                Venda Mais Alta:{" "}
                 <span className="font-bold">{highestValueDate}</span>
               </p>
             </div>
