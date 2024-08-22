@@ -1,5 +1,5 @@
-import { PrismaClient } from "@prisma/client";
 import { Request, Response } from "express";
+import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -14,46 +14,45 @@ export const getDashboardMetrics = async (
         stockQuantity: "desc",
       },
     });
-
-    const saleSummary = await prisma.salesSummary.findMany({
+    const salesSummary = await prisma.salesSummary.findMany({
       take: 5,
       orderBy: {
         date: "desc",
       },
     });
-
     const purchaseSummary = await prisma.purchaseSummary.findMany({
       take: 5,
       orderBy: {
         date: "desc",
       },
     });
-
     const expenseSummary = await prisma.expenseSummary.findMany({
       take: 5,
       orderBy: {
         date: "desc",
       },
     });
-
-    const expenseByCategoryRaw = await prisma.expenseByCategory.findMany({
-      take: 5,
-      orderBy: {
-        date: "desc",
-      },
-    });
-
-    const expenseByCategory = expenseByCategoryRaw.map((item) => ({
-      ...item,
-      amount: item.amount.toString(),
-    }));
+    const expenseByCategorySummaryRaw = await prisma.expenseByCategory.findMany(
+      {
+        take: 5,
+        orderBy: {
+          date: "desc",
+        },
+      }
+    );
+    const expenseByCategorySummary = expenseByCategorySummaryRaw.map(
+      (item) => ({
+        ...item,
+        amount: item.amount.toString(),
+      })
+    );
 
     res.json({
       popularProducts,
-      saleSummary,
+      salesSummary,
       purchaseSummary,
       expenseSummary,
-      expenseByCategory,
+      expenseByCategorySummary,
     });
   } catch (error) {
     res.status(500).json({ message: "Error retrieving dashboard metrics" });
