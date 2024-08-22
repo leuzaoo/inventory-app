@@ -10,7 +10,7 @@
 /coverage
 
 # next.js
-client/.next
+client/.next/
 /.next/
 /out/
 .next
