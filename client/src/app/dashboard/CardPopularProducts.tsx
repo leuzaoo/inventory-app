@@ -24,7 +24,7 @@ const CardPopularProducts = () => {
       ) : (
         <>
           <h3 className="text-lg font-semibold px-7 pt-5 pb-2">
-            Popular Products
+            Produtos Populares
           </h3>
           <hr />
           <div className="overflow-auto h-full">
@@ -52,7 +52,7 @@ const CardPopularProducts = () => {
                   <button className="p-2 rounded-full bg-blue-100 text-blue-600 mr-2">
                     <ShoppingBag className="w-4 h-4" />
                   </button>
-                  {Math.round(product.stockQuantity / 1000)}k Sold
+                  {Math.round(product.stockQuantity / 1000)}k vendidos
                 </div>
               </div>
             ))}

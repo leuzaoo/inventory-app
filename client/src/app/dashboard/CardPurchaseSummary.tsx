@@ -26,7 +26,7 @@ const CardPurchaseSummary = () => {
           {/* HEADER */}
           <div>
             <h2 className="text-lg font-semibold mb-2 px-7 pt-5">
-              Purchase Summary
+              Resumo de Compras
             </h2>
             <hr />
           </div>
@@ -35,11 +35,13 @@ const CardPurchaseSummary = () => {
           <div>
             {/* BODY HEADER */}
             <div className="mb-4 mt-7 px-7">
-              <p className="text-xs text-gray-400">Purchased</p>
+              <p className="text-xs text-gray-400">Comprado</p>
               <div className="flex items-center">
                 <p className="text-2xl font-bold">
                   {lastDataPoint
-                    ? numeral(lastDataPoint.totalPurchased).format("$0.00a")
+                    ? `R$${numeral(lastDataPoint.totalPurchased).format(
+                        "0.00a"
+                      )}`
                     : "0"}
                 </p>
                 {lastDataPoint && (
