@@ -1,4 +1,5 @@
 import dashboardRoutes from "./routes/dashboardRoutes";
+import productRoutes from "./routes/productRoutes";
 import bodyParser from "body-parser";
 import express from "express";
 import dotenv from "dotenv";
@@ -21,6 +22,8 @@ app.use(cors());
 
 // ROUTES
 app.use("/dashboard", dashboardRoutes);
+app.use("/products", productRoutes);
+
 // SERVER
 
 const port = process.env.PORT || 3001;
