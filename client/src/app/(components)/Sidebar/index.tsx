@@ -74,7 +74,11 @@ const Sidebar = () => {
           isSidebarBarCollapsed ? "px-5" : "px-8"
         }`}
       >
-        <div>logo</div>
+        <div
+          className={`bg-gray-900 ${
+            isSidebarBarCollapsed ? "h-6 w-6" : "h-10 w-10"
+          } rounded-full`}
+        ></div>
         <h1
           className={`${
             isSidebarBarCollapsed ? "hidden" : "block"
