@@ -47,7 +47,7 @@ const InventoryPage = () => {
 
   return (
     <div className="flex flex-col">
-      <Header name="Inventory" />
+      <Header name="Inventário" />
       <DataGrid
         rows={products}
         columns={columns}

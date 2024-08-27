@@ -20,37 +20,37 @@ const Dashboard = () => {
       <CardPurchaseSummary />
       <CardExpenseSummary />
       <StatCard
-        title="Customer & Expenses"
+        title="Clientes & Despesas"
         primaryIcon={<Package className="text-blue-600 w-6 h-6" />}
         dateRange="22 - 29/10/2023"
         details={[
           {
-            title: "Customer Growth",
-            amount: "175.00",
+            title: "Crescimento de Clientes",
+            amount: "175",
             changePercentage: 131,
             IconComponent: TrendingUp,
           },
           {
-            title: "Expenses",
-            amount: "10.00",
+            title: "Despesas",
+            amount: "10",
             changePercentage: -56,
             IconComponent: TrendingDown,
           },
         ]}
       />
       <StatCard
-        title="Dues & Pending Orders"
+        title="Dívidas & Pedidos"
         primaryIcon={<CheckCircle className="text-blue-600 w-6 h-6" />}
         dateRange="22 - 29/10/2023"
         details={[
           {
-            title: "Dues",
-            amount: "250.00",
+            title: "Dívidas",
+            amount: "250",
             changePercentage: 131,
             IconComponent: TrendingUp,
           },
           {
-            title: "Pending Orders",
+            title: "Pedidos Recentes",
             amount: "147",
             changePercentage: -56,
             IconComponent: TrendingDown,
@@ -58,19 +58,19 @@ const Dashboard = () => {
         ]}
       />
       <StatCard
-        title="Sales & Discount"
+        title="Vendas & Descontos"
         primaryIcon={<Tag className="text-blue-600 w-6 h-6" />}
         dateRange="22 - 29/10/2023"
         details={[
           {
-            title: "Sales",
-            amount: "1000.00",
+            title: "Vendas",
+            amount: "R$1000.00",
             changePercentage: 20,
             IconComponent: TrendingUp,
           },
           {
-            title: "Discount",
-            amount: "200.00",
+            title: "Desconto",
+            amount: "R$200.00",
             changePercentage: -10,
             IconComponent: TrendingDown,
           },

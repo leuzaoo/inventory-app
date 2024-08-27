@@ -6,7 +6,7 @@ import Rating from "../(components)/Rating";
 const CardPopularProducts = () => {
   const {
     data: dashboardMetrics,
-      isLoading,
+    isLoading,
     isError,
   } = useGetDashboardMetricsQuery();
 
@@ -24,7 +24,7 @@ const CardPopularProducts = () => {
       ) : (
         <>
           <h3 className="text-lg font-semibold px-7 pt-5 pb-2">
-            Produtos Populares
+            Mais Vendidos
           </h3>
           <hr />
           <div className="overflow-auto h-full">
