@@ -9,11 +9,11 @@ type UserSetting = {
 };
 
 const mockSettings: UserSetting[] = [
-  { label: "Username", value: "john_doe", type: "text" },
+  { label: "Nome", value: "John Doe", type: "text" },
   { label: "Email", value: "john.doe@example.com", type: "text" },
-  { label: "Notification", value: true, type: "toggle" },
-  { label: "Dark Mode", value: false, type: "toggle" },
-  { label: "Language", value: "English", type: "text" },
+  { label: "Notificação", value: true, type: "toggle" },
+  { label: "Modo Escuro", value: false, type: "toggle" },
+  { label: "Linguagem", value: "Português", type: "text" },
 ];
 
 const SettingsPage = () => {
@@ -33,10 +33,10 @@ const SettingsPage = () => {
           <thead className="bg-gray-800 text-white">
             <tr>
               <th className="text-left py-3 px-4 uppercase font-semibold text-sm">
-                Setting
+                Contexto
               </th>
               <th className="text-left py-3 px-4 uppercase font-semibold text-sm">
-                Value
+                Valores
               </th>
             </tr>
           </thead>
@@ -59,7 +59,7 @@ const SettingsPage = () => {
                     after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white 
                     after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all
                     peer-checked:bg-blue-600"
-                      ></div>
+                      />
                     </label>
                   ) : (
                     <input

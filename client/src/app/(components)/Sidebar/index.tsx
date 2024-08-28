@@ -125,12 +125,6 @@ const Sidebar = () => {
           label="Configuração"
           isCollapsed={isSidebarBarCollapsed}
         />
-        <SidebarLink
-          href="/expenses"
-          icon={CircleDollarSign}
-          label="Vendas"
-          isCollapsed={isSidebarBarCollapsed}
-        />
       </div>
       {/* footer */}
       <div className={`${isSidebarBarCollapsed ? "hidden" : "block"} mb-10`}>
