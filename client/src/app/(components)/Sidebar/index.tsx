@@ -11,6 +11,7 @@ import {
   SlidersHorizontal,
   User,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -74,11 +75,13 @@ const Sidebar = () => {
           isSidebarBarCollapsed ? "px-5" : "px-8"
         }`}
       >
-        <div
-          className={`bg-gray-900 ${
-            isSidebarBarCollapsed ? "h-6 w-6" : "h-10 w-10"
-          } rounded-full`}
-        ></div>
+        <Image
+          src="https://leuzaoo-s3-inventorymanagement.s3.sa-east-1.amazonaws.com/logo.png"
+          alt="Logo"
+          width={27}
+          height={27}
+          className="rounded w-8"
+        />
         <h1
           className={`${
             isSidebarBarCollapsed ? "hidden" : "block"
